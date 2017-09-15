@@ -43,6 +43,40 @@ var io = require('socket.io').listen(server);
       //Give all other users the new user
       socket.broadcast.emit('newUser', socket.user);
     });
-  }
+   }
   });
+```
+#### Client.js Making calls to the server
+#### This is used to interact with the web pages and make calls out to the server
+```javascript
+  //This is used to connect to the socket server
+  var socket = io.connect();
+  var user;
+
+  $(document).ready(function(){
+    //Get user name and make sure it isnt null
+    user = prompt("Please enter your user name", "User");
+    if(user == null){
+      //reload page if username isnt entered
+      location.reload();
+    } else {
+      //emit the message out to the server
+      socket.emit('newUser', user);
+    }
+
+    //ease of use tool for submitting msg on enter key
+    $("#chatText").keypress(function(e){
+      //keycode for enter key
+      if(e.which == 13){
+        sendMsg();
+      }
+    })
+  });
+
+  function sendMsg(){
+    var msg = $("#chatText").val();
+    console.log(user+": " + msg);
+    socket.emit('sendMessage', user, msg);
+    $("#chatText").val("");
+  }
 ```

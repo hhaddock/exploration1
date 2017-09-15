@@ -27,8 +27,8 @@ server.listen(4321, function(){
 var io = require('socket.io').listen(server);
 ```
 ---
-Socket server side programming to catch client calls
-NOTE: This is just an example, all of the server-side code is located in Server.js
+#### Socket server side programming to catch client calls
+#### NOTE: This is just an example, all of the server-side code is located in Server.js
 ```javascript
   io.on('connection', function(socket){
     console.log("a user has connected!");

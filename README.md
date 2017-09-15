@@ -24,4 +24,24 @@ server.listen(4321, function(){
  console.log("Listening on port 8888");
 });
 
+var io = require('socket.io').listen(server);
+```
+---
+Socket server side programming to catch client calls
+```javascript
+  io.on('connection', function(socket){
+    console.log("a user has connected!");
+
+    socket.on('newUser', function(user){
+      socket.user = {
+        id: server.lastUserID++,
+        username: user
+      };
+      //Get all users in the room for new user
+      socket.emit('allUsers', getConnectedClients());
+      //Give all other users the new user
+      socket.broadcast.emit('newUser', socket.user);
+    });
+  }
+  });
 ```

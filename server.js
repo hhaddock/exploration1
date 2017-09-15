@@ -5,7 +5,7 @@ var io = require('socket.io')(server);
 
 app.use(express.static('app'));
 
-app.get('/exp1', function(req, res){
+app.get('/', function(req, res){
  res.sendFile(__dirname + '/app/index.html');
 });
 

@@ -6,7 +6,7 @@ var io = require('socket.io')(server);
 app.use('/static',express.static(__dirname + '/app'));
 
 app.get('/', function(req, res){
- res.sendFile(path.join(__dirname + '/app/index.html'));
+ res.sendFile(path.join(__dirname + '/static/app/index.html'));
 });
 
 server.listen(8888, function(){

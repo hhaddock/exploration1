@@ -3,10 +3,30 @@
  <head>
   <meta charset="utf-8">
   <title>Exploration 1: Web Chat</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/client.js"></script>
  </head>
  <body>
-  <h1>This is a test</h1>
+  <div class="container jumbotron">
+   <h1>Exploration #1 chat:</h1>
+   <hr>
+   <div class="col-md-8">
+    <div class="chatBox" id="chatList">
+     <ul id="chatList">
+      <li>test</li>
+     </ul>
+    </div>
+   </div>
+   <div class="col-md-4">
+    <div class="chatBox" id="chatList">
+     <p class="text-center">Connected Users:</p>
+     <ul id="connectedUserList"></ul>
+    </div>
+   </div>
+  </div>
  </body>
 </html>

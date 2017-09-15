@@ -5,12 +5,12 @@ var io = require('socket.io')(server);
 
 app.use(express.static('app'));
 
-app.get('/', function(req, res){
+app.get('/app', function(req, res){
  res.sendFile(path.join(__dirname + '/app/index.html'));
 });
 
-server.listen(3000, function(){
- console.log("Listening on port 3000");
+server.listen(8888, function(){
+ console.log("Listening on port 8888");
 });
 
 server.lastUserID = 0; //used to keep track of users

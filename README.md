@@ -1,7 +1,7 @@
 # Web Socket Chat Room
 ## Exploration 1
 ---
-Server connection using NodeJS
+#### Server connection using NodeJS
 ```javascript
 
 //Getting NPM Modules

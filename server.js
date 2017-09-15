@@ -35,6 +35,15 @@ io.on('connection', function(socket){
   socket.on('sendMessage', function(user, msg){
     io.emit('sendMessage', user, msg);
   });
+
+  socket.on('test', function(user){
+    console.log("test");
+  });
+
+  socket.on('disconnect', function(){
+    console.log(socket.user)
+    io.emit('disconnect', socket.user);
+  });
 });
 
 function getConnectedClients(){

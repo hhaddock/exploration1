@@ -29,14 +29,20 @@ function sendMsg(){
 socket.on('allUsers', function(data){
   for(i = 0; i < data.length; i++){
     console.log(data[i]);
-    $("#connectedUserList").append("<li><h3><u>"+data[i].username+"</u></h3></li>");
+    $("#connectedUserList").append("<li class='user' name="+data[i].id+"><h3><u>"+data[i].username+"</u></h3></li>");
   }
 });
-socket.on('newUser', function(user){
-  console.log(user);
-  $("#connectedUserList").append("<li><h3><u>"+user.username+"</u></h3></li>");
-  $("#chatList").append("<li>User <strong><u>"+user.username+"</u></strong> has entered </li>")
+
+socket.on('newUser', function(data){
+  $("#connectedUserList").append("<li class='user' name="+data.id+"><h3><u>"+data.username+"</u></h3></li>");
+  $("#chatList").append("<li>User <strong><u>"+data.username+"</u></strong> has entered </li>")
 });
+
 socket.on('sendMessage', function(user, msg){
   $("#chatList").append("<li><span><strong><u>"+user+"</u></strong><span>: <span>"+msg+"</span></li>")
+});
+
+socket.on('disconnect', function(user){
+  $("#chatList").append("<li>User <strong><u>"+user.username+"</u></strong> has left the room</li>")
+  $('li[name="'+user.id+'"]').remove();
 });

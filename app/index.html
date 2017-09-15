@@ -16,16 +16,24 @@
    <hr>
    <div class="col-md-8">
     <div class="chatBox" id="chatList">
-     <ul id="chatList">
-      <li>test</li>
-     </ul>
+      <ul id="chatList" class="chat"></ul>
     </div>
    </div>
    <div class="col-md-4">
     <div class="chatBox" id="chatList">
      <p class="text-center">Connected Users:</p>
-     <ul id="connectedUserList"></ul>
+     <ul id="connectedUserList" class="connectUsers"></ul>
     </div>
+   </div>
+   <br>
+   <div class="col-md-12">
+     <br>
+     <div class="col-md-6">
+       <input type="text" id="chatText" class="form-control" placeholder="Enter message here...">
+     </div>
+     <div class="col-md-2">
+       <input type="button" value="Send" class="btn btn-danger btn-block" onclick="sendMsg()">
+     </div>
    </div>
   </div>
  </body>

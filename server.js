@@ -4,6 +4,9 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 app.use(express.static('app'));
+app.use(express.static('app/css'));
+app.use(express.static('app/js'));
+
 
 app.get('/', function(req, res){
  res.sendFile(path.join(__dirname + '/app/index.html'));

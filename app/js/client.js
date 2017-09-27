@@ -3,12 +3,12 @@ var user;
 var auth;
 
 url = parseUrl(window.location.href).search;
-// auth = getAuth(url);
+auth = getAuth(url);
 
 $(document).ready(function(){
   //Get user name and make sure it isnt null
-  user = auth[1];
-  socket.emit('newUser', user);
+  // user = auth[1];
+  // socket.emit('newUser', user);
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
     //keycode for enter key
@@ -25,17 +25,7 @@ function parseUrl(url){
 }
 
 function getAuth(url){
-  if(url){
-    var str = url.split("&");
-    var auth = str[0].split("=");
-    var user = str[1].split("=");
-
-    var array = [auth[1], user[1]];
-  } else {
-    window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2"
-  }
-
-  return array;
+  console.log(url);
 }
 
 function sendMsg(){

@@ -60,7 +60,8 @@ socket.on('sendMessage', function(user, msg){
   window.setInterval(function() {
     var elem = document.getElementById('chatList');
     elem.scrollTop = elem.scrollHeight;
-  }, 5000);
+  }, 1000);
+  window.clearInterval();
 });
 
 socket.on('disconnect', function(user){

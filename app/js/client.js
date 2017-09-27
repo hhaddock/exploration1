@@ -35,9 +35,9 @@ function parseUrl(url){
   return a;
 }
 
-function getUser(auth){
-  var user = auth.split("=");
-  return user[1];
+function getAuth(auth){
+  var user = auth.split("&");
+  return user;
 }
 
 function sendMsg(){

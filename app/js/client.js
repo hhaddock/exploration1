@@ -60,8 +60,8 @@ socket.on('sendMessage', function(user, msg){
   var clock = setInterval(function() {
     var elem = document.getElementById('chatList');
     elem.scrollTop = elem.scrollHeight;
+    clearInterval(clock);
   }, 1000);
-  clearInterval(clock);
 });
 
 socket.on('disconnect', function(user){

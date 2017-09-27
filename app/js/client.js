@@ -7,8 +7,6 @@ auth = getAuth(url);
 
 $(document).ready(function(){
   //Get user name and make sure it isnt null
-  // user = auth[1];
-  // socket.emit('newUser', user);
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
     //keycode for enter key
@@ -27,7 +25,6 @@ function parseUrl(url){
 function getAuth(url){
   var user = url.split("=");
   socket.emit('checkUser', user[1]);
-  // return user[1];
 }
 
 function sendMsg(){

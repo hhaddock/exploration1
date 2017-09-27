@@ -19,6 +19,10 @@ var io = require('socket.io').listen(server);
 
 server.lastUserID = 0; //used to keep track of users
 
+process.on('uncaughtException', function (err) {
+  console.log(err);
+})
+
 io.on('connection', function(socket){
   console.log("a user has connected!");
 

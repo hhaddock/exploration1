@@ -18,7 +18,7 @@ $(document).ready(function(){
   //   }
   // });
   auth = parseUrl(window.location.href).search;
-  console.log(getUser(auth[0]));
+  console.log(getUser(auth));
 
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
@@ -37,7 +37,7 @@ function parseUrl(url){
 
 function getUser(auth){
   var user = auth.split("=");
-  return user;
+  return user[1];
 }
 
 function sendMsg(){

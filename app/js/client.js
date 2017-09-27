@@ -18,15 +18,19 @@ $(document).ready(function(){
   //   }
   // });
   url = parseUrl(window.location.href).search;
-  user = getAuth(url)
-  console.log(user);
-  //ease of use tool for submitting msg on enter key
-  $("#chatText").keypress(function(e){
-    //keycode for enter key
-    if(e.which == 13){
-      sendMsg();
-    }
-  })
+  auth = getAuth(url)
+  if(auth[0] == 'true'){
+    user = auth[1];
+    //ease of use tool for submitting msg on enter key
+    $("#chatText").keypress(function(e){
+      //keycode for enter key
+      if(e.which == 13){
+        sendMsg();
+      }
+    })
+  } else {
+    window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2"
+  }
 });
 
 function parseUrl(url){

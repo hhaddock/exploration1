@@ -52,7 +52,7 @@ socket.on('allUsers', function(data){
 
 socket.on('newUser', function(data){
   $("#connectedUserList").append("<li class='user' name="+data.id+"><h3><u>"+data.username+"</u></h3></li>");
-  $("#chatList").append("<li>User <strong><u>"+data.username+"</u></strong> has entered </li>")
+  $("#chatList").append("<li>User <strong><u>"+data.username+"</u></strong> has entered </li><hr>")
 });
 
 socket.on('sendMessage', function(user, msg){
@@ -60,7 +60,7 @@ socket.on('sendMessage', function(user, msg){
 });
 
 socket.on('disconnect', function(user){
-  $("#chatList").append("<li>User <strong><u>"+user.username+"</u></strong> has left the room</li>")
+  $("#chatList").append("<li>User <strong><u>"+user.username+"</u></strong> has left the room</li><hr>")
   $('li[name="'+user.id+'"]').remove();
 });
 

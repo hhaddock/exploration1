@@ -19,13 +19,13 @@ var io = require('socket.io').listen(server);
 
 server.lastUserID = 0; //used to keep track of users
 
-process.on('uncaughtException', function (err) {
-  console.log(err);
-  socket.emit('kick', "true");
-});
-
 io.on('connection', function(socket){
   console.log("a user has connected!");
+
+  process.on('uncaughtException', function (err) {
+    console.log(err);
+    socket.emit('kick', "true");
+  });
 
   socket.on('checkUser', function(user){
     var sql = 'SELECT * FROM users WHERE username = ?';

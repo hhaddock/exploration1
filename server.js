@@ -27,7 +27,8 @@ io.on('connection', function(socket){
     db.query(sql, [user], function(err, res, fields){
      if(res[0].username == user){
        socket.emit('checkUser', res[0]);
-     } else {
+     }
+     if(err){
        socket.emit('checkUser', "Not Authorized");
      }
     });

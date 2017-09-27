@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/app/css'));
 app.use(express.static(__dirname + '/app/js'));
 
 app.get('/', function(req, res){
-  console.log(req.query.auth);
+  console.log("Auth: "+req.query.user);
   res.sendFile(path.join(__dirname + '/app/index.html'));
 });
 

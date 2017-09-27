@@ -7,19 +7,6 @@ auth = getAuth(url);
 
 $(document).ready(function(){
   //Get user name and make sure it isnt null
-  // user = prompt("Please enter your user name", "User");
-  // if(user == null){
-  //   location.reload();
-  // } else {
-  //   socket.emit('newUser', user);
-  // }
-  // $.ajax({
-  //   url: "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/php/auth.php",
-  //   type: "post",
-  //   success: function(res){
-  //     console.log(res);
-  //   }
-  // });
   user = auth[1];
   socket.emit('newUser', user);
   //ease of use tool for submitting msg on enter key

@@ -38,8 +38,11 @@ function parseUrl(url){
 function getAuth(url){
   var str = url.split("&");
   var auth = str[0].split("=");
+  var user = str[1].split("=");
 
-  return auth;
+  var array = auth + user;
+
+  return array;
 }
 
 function sendMsg(){

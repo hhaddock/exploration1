@@ -23,14 +23,15 @@ io.on('connection', function(socket){
   console.log("a user has connected!");
 
   socket.on('checkUser', function(user){
-   db.query('SELECT * FROM users WHERE username = '+user, function(err, res, fields){
+    var sql = 'SELECT * FROM users WHERE username = '+user;
+    db.query(sql, function(err, res, fields){
     //  if(res[0].username == user[1]){
     //    socket.emit('checkUser', res[0].username);
     //  } else {
     //    socket.emit('checkUser', "Not Authorized");
     //  }
       socket.emit('checkUser', res);
-   });
+    });
   //  console.log(user);
   //  socket.emit('checkUser', user);
   });

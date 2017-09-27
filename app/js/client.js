@@ -19,7 +19,9 @@ $(document).ready(function(){
   // });
   url = parseUrl(window.location.href).search;
   auth = getAuth(url)
-  if(auth[0] == 'true'){
+  if(auth[0] == null){
+    window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2"
+  } else {
     user = auth[1];
     //ease of use tool for submitting msg on enter key
     $("#chatText").keypress(function(e){
@@ -28,8 +30,6 @@ $(document).ready(function(){
         sendMsg();
       }
     })
-  } else {
-    window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2"
   }
 });
 

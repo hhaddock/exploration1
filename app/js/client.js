@@ -42,11 +42,15 @@ function parseUrl(url){
 }
 
 function getAuth(url){
-  var str = url.split("&");
-  var auth = str[0].split("=");
-  var user = str[1].split("=");
+  if(url != 'undefined'){
+    var str = url.split("&");
+    var auth = str[0].split("=");
+    var user = str[1].split("=");
 
-  var array = [auth[1], user[1]];
+    var array = [auth[1], user[1]];
+  } else {
+    window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2"
+  }
 
   return array;
 }

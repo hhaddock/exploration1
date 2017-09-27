@@ -57,7 +57,10 @@ socket.on('newUser', function(data){
 
 socket.on('sendMessage', function(user, msg){
   $("#chatList").append("<li><span><strong><u>"+user+"</u></strong><span>: <span>"+msg+"</span></li><hr>")
-  $("#chatList").scrollTop();
+  window.setInterval(function() {
+    var elem = document.getElementById('chatList');
+    elem.scrollTop = elem.scrollHeight;
+  }, 5000);
 });
 
 socket.on('disconnect', function(user){

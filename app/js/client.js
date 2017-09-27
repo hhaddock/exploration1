@@ -38,7 +38,7 @@ function sendMsg(){
 }
 
 socket.on('checkUser', function(data){
-  console.log(data);
+  console.log(data[0].username);
 });
 
 socket.on('allUsers', function(data){

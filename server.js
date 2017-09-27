@@ -8,7 +8,6 @@ app.use(express.static(__dirname + '/app/css'));
 app.use(express.static(__dirname + '/app/js'));
 
 app.get('/', function(req, res){
-  console.log("Auth: "+req.query.user);
   res.sendFile(path.join(__dirname + '/app/index.html'));
 });
 
@@ -24,8 +23,7 @@ io.on('connection', function(socket){
   console.log("a user has connected!");
 
   socket.on('checkUser', function(user){
-   db.query('SELECT * FROM users', function(err, rows){
-     var res = JSON.parse(rows)
+   db.query('SELECT * FROM users', function(err, res, fields){
      socket.emit('checkUser', res);
    });
   //  console.log(user);

@@ -15,13 +15,6 @@ server.listen(1234, function(){
  console.log("Listening on port 8888");
 });
 
-app.use(function(error, request, response, next) {
-    console.log("Error handler: ", error);
-    // Send an error message to the user.
-    response.status(500).json({error:error.message});
-    // Optionally log the request options so you can analyze it later.
-});
-
 var io = require('socket.io').listen(server);
 
 server.lastUserID = 0; //used to keep track of users
@@ -32,12 +25,12 @@ io.on('connection', function(socket){
   socket.on('checkUser', function(user){
     var sql = 'SELECT * FROM users WHERE username = ?';
     db.query(sql, [user], function(err, res, fields){
-     if(res[0].username == user){
-       socket.emit('checkUser', res[0]);
-     } else {
-       socket.emit('checkUser', "Not Authorized");
-     }
-     if (err) return console.log(err);
+      if (err) return console.log(err);
+      if(res[0].username == user){
+        socket.emit('checkUser', res[0]);
+      } else {
+        socket.emit('checkUser', "Not Authorized");
+      }
     });
   });
 

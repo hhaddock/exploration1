@@ -19,7 +19,7 @@ $(document).ready(function(){
   // });
   auth = parseUrl(window.location.href).search;
   user = getAuth(auth)
-
+console.log(user);
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
     //keycode for enter key

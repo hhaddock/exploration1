@@ -2,6 +2,9 @@ var socket = io.connect();
 var user;
 var auth;
 
+url = parseUrl(window.location.href).search;
+auth = getAuth(url);
+
 $(document).ready(function(){
   //Get user name and make sure it isnt null
   // user = prompt("Please enter your user name", "User");
@@ -17,22 +20,15 @@ $(document).ready(function(){
   //     console.log(res);
   //   }
   // });
-  url = parseUrl(window.location.href).search;
-  auth = getAuth(url)
-  if(auth[0] == null){
-    console.log(auth[0]);
-    window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2"
-  } else {
-    console.log(auth[0]);
-    user = auth[1];
-    //ease of use tool for submitting msg on enter key
-    $("#chatText").keypress(function(e){
-      //keycode for enter key
-      if(e.which == 13){
-        sendMsg();
-      }
-    })
-  }
+  user = auth[1];
+  socket.emit('newUser', user);
+  //ease of use tool for submitting msg on enter key
+  $("#chatText").keypress(function(e){
+    //keycode for enter key
+    if(e.which == 13){
+      sendMsg();
+    }
+  })
 });
 
 function parseUrl(url){

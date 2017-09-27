@@ -48,12 +48,12 @@ function sendMsg(){
 socket.on('allUsers', function(data){
   for(i = 0; i < data.length; i++){
     console.log(data[i]);
-    $("#connectedUserList").append("<li class='user' name="+data[i].id+"><h3><u>"+data[i].username+"</u></h3></li>");
+    $("#connectedUserList").append("<li class='user' name="+data[i].id+"><h3><u>"+data[i].username+"</u></h3></li><hr>");
   }
 });
 
 socket.on('newUser', function(data){
-  $("#connectedUserList").append("<li class='user' name="+data.id+"><h3><u>"+data.username+"</u></h3></li>");
+  $("#connectedUserList").append("<li class='user' name="+data.id+"><h3><u>"+data.username+"</u></h3></li><hr>");
   $("#chatList").append("<li>User <strong><u>"+data.username+"</u></strong> has entered </li>")
 });
 

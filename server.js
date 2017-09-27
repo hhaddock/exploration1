@@ -58,11 +58,11 @@ io.on('connection', function(socket){
 
   socket.on('disconnect', function(){
     console.log(socket.user)
-    var sql = 'UPDATE users SET auth = 0 WHERE username = ?;';
-    db.query(sql, [socket.user], function(err, res, fields){
-      if (err) return console.log(err);
-      console.log(res);
-    });
+    // var sql = 'UPDATE users SET auth = 0 WHERE username = ?;';
+    // db.query(sql, [socket.user], function(err, res, fields){
+    //   if (err) return console.log(err);
+    //   console.log(res);
+    // });
     io.emit('disconnect', socket.user);
   });
 });

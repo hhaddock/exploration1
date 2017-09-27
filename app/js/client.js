@@ -37,9 +37,9 @@ function parseUrl(url){
 
 function getAuth(url){
   var str = url.split("&");
+  var auth = str[0].split("=");
 
-
-  return str;
+  return auth;
 }
 
 function sendMsg(){

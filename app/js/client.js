@@ -17,9 +17,9 @@ $(document).ready(function(){
   //     console.log(res);
   //   }
   // });
-  auth = parseUrl(window.location.href).search;
-  user = getAuth(auth)
-console.log(user);
+  url = parseUrl(window.location.href).search;
+  user = getAuth(url)
+  console.log(user);
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
     //keycode for enter key
@@ -35,8 +35,10 @@ function parseUrl(url){
   return a;
 }
 
-function getAuth(auth){
-  var user = auth.split("&");
+function getAuth(url){
+  var url = auth.split("&");
+  var user = url.split("=");
+
   return user;
 }
 

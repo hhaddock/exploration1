@@ -23,9 +23,9 @@ io.on('connection', function(socket){
   console.log("a user has connected!");
 
   socket.on('checkUser', function(user){
-   db.query('SELECT * FROM users', function(err, res, fields){
+   db.query('SELECT * FROM users WHERE username = '+user, function(err, res, fields){
      if(res[0].username == user[1]){
-       socket.emit('checkUser', res);
+       socket.emit('checkUser', res[0].);
      } else {
        socket.emit('checkUser', "Not Authorized");
      }

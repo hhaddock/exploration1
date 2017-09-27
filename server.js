@@ -6,8 +6,9 @@ app.use(express.static(__dirname + '/app'));
 app.use(express.static(__dirname + '/app/css'));
 app.use(express.static(__dirname + '/app/js'));
 
-app.get('/:auth', function(req, res){
- res.sendFile(path.join(__dirname + '/app/index.html'));
+app.get('/', function(req, res){
+  console.log(req.query.auth);
+  res.sendFile(path.join(__dirname + '/app/index.html'));
 });
 
 server.listen(1234, function(){

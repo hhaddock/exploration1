@@ -11,7 +11,7 @@ $(document).ready(function(){
   // }
   $.ajax({
     url: "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/php/auth.php",
-    type: "get",
+    type: "post",
     success: function(res){
       console.log(res);
     }

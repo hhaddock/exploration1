@@ -57,7 +57,7 @@ socket.on('newUser', function(data){
 
 socket.on('sendMessage', function(user, msg){
   $("#chatList").append("<li><span><strong><u>"+user+"</u></strong><span>: <span>"+msg+"</span></li><hr>")
-  $("#chatList").scrollTop() = $("#chatList").scrollHeight()
+  $("#chatList").scrollTop();
 });
 
 socket.on('disconnect', function(user){

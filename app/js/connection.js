@@ -10,6 +10,6 @@ connection.connect(function(err) {
   if (err) throw err
   console.log('Database Connection Successful!');
 });
-connection.query('USE users');
+connection.query('USE user');
 
 module.exports = connection;

@@ -23,6 +23,7 @@ io.on('connection', function(socket){
   console.log("a user has connected!");
 
   socket.on('checkUser', function(user){
+    console.log(user[1]);
     var sql = 'SELECT * FROM users WHERE username = '+ user[1];
     db.query(sql, function(err, res, fields){
     //  if(res[0].username == user[1]){

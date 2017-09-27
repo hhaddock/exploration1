@@ -30,7 +30,7 @@ io.on('connection', function(socket){
     //  } else {
     //    socket.emit('checkUser', "Not Authorized");
     //  }
-    console.log(res);
+    console.log(sql);
     });
   //  console.log(user);
   //  socket.emit('checkUser', user);

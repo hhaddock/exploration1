@@ -9,13 +9,14 @@ $(document).ready(function(){
   // } else {
   //   socket.emit('newUser', user);
   // }
-  $.ajax({
-    url: "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/php/auth.php",
-    type: "post",
-    success: function(res){
-      console.log(res);
-    }
-  });
+  // $.ajax({
+  //   url: "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/php/auth.php",
+  //   type: "post",
+  //   success: function(res){
+  //     console.log(res);
+  //   }
+  // });
+  console.log(window.location.href);
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
     //keycode for enter key

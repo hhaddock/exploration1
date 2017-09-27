@@ -3,7 +3,7 @@ var user;
 var auth;
 
 url = parseUrl(window.location.href).search;
-auth = getAuth(url);
+// auth = getAuth(url);
 
 $(document).ready(function(){
   //Get user name and make sure it isnt null

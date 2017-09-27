@@ -26,7 +26,7 @@ function parseUrl(url){
 
 function getAuth(url){
   var user = url.split("=");
-  socket.emit('checkUser', user);
+  socket.emit('checkUser', user[1]);
   // return user[1];
 }
 

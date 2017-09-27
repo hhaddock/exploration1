@@ -16,7 +16,8 @@ $(document).ready(function(){
   //     console.log(res);
   //   }
   // });
-  console.log(window.location.href);
+  console.log(parseUrl(window.location.href).search);
+
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
     //keycode for enter key
@@ -25,6 +26,12 @@ $(document).ready(function(){
     }
   })
 });
+
+function parseUrl(url){
+  var a = document.createElement('a');
+  a.href = url;
+  return a;
+}
 
 function sendMsg(){
   var msg = $("#chatText").val();

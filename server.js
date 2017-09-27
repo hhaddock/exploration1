@@ -29,6 +29,7 @@ io.on('connection', function(socket){
    //   socket.emit('checkUser', rows);
    // });
    console.log(user);
+     socket.emit('checkUser', user);
   });
 
   socket.on('newUser', function(user){

@@ -58,7 +58,7 @@ socket.on('newUser', function(data){
 });
 
 socket.on('sendMessage', function(user, msg){
-  $("#chatList").append("<li><span><strong><u>"+user+"</u></strong><span>: <span>"+msg+"</span></li>")
+  $("#chatList").append("<li><span><strong><u>"+user+"</u></strong><span>: <span>"+msg+"</span></li><hr>")
 });
 
 socket.on('disconnect', function(user){

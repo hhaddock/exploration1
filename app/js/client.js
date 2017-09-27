@@ -42,7 +42,7 @@ function parseUrl(url){
 }
 
 function getAuth(url){
-  if(url != 'undefined'){
+  if(url){
     var str = url.split("&");
     var auth = str[0].split("=");
     var user = str[1].split("=");

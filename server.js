@@ -30,9 +30,7 @@ io.on('connection', function(socket){
      } else {
        socket.emit('checkUser', "Not Authorized");
      }
-     if(err){
-       socket.emit('checkUser', "Not Authorized");
-     }
+     if (err) return console.log(err);
     });
   });
 

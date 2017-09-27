@@ -1,7 +1,6 @@
 var socket = io.connect();
 var user;
 var auth;
-var db = require('connection.js');
 
 url = parseUrl(window.location.href).search;
 auth = getAuth(url);

@@ -21,7 +21,8 @@ server.lastUserID = 0; //used to keep track of users
 
 process.on('uncaughtException', function (err) {
   console.log(err);
-})
+  window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2";
+});
 
 io.on('connection', function(socket){
   console.log("a user has connected!");

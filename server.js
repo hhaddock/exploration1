@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
-// var db = require('app/js/connection.js');
+var db = require('./app/js/connection.js');
 
 app.use(express.static(__dirname + '/app'));
 app.use(express.static(__dirname + '/app/css'));

@@ -40,7 +40,7 @@ function getAuth(url){
   var auth = str[0].split("=");
   var user = str[1].split("=");
 
-  var array = auth + user;
+  var array = [auth[1], user[1]];
 
   return array;
 }

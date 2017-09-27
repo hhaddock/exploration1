@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
 });
 
 connection.connect(function(err) {
-  if (err) throw err
+  if (err) return console.log(err);
   console.log('Database Connection Successful!');
 });
 connection.query('USE chatApp');

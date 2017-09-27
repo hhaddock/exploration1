@@ -36,7 +36,7 @@ function parseUrl(url){
 }
 
 function getAuth(url){
-  var url = auth.split("&");
+  var url = url.split("&");
   var user = url.split("=");
 
   return user;

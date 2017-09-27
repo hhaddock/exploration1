@@ -24,10 +24,11 @@ io.on('connection', function(socket){
   console.log("a user has connected!");
 
   socket.on('checkUser', function(user){
-   db.query('SELECT * FROM users', function(err, rows){
-     res.json(rows);
-     socket.emit('checkUser', rows);
-   });
+   // db.query('SELECT * FROM users', function(err, rows){
+   //   res.json(rows);
+   //   socket.emit('checkUser', rows);
+   // });
+   console.log(user);
   });
 
   socket.on('newUser', function(user){

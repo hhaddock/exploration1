@@ -25,11 +25,12 @@ io.on('connection', function(socket){
   socket.on('checkUser', function(user){
     var sql = 'SELECT * FROM users WHERE username = '+ user[1];
     db.query(sql, function(err, res, fields){
-     if(res[0].username == user[1]){
-       socket.emit('checkUser', res[0].username);
-     } else {
-       socket.emit('checkUser', "Not Authorized");
-     }
+    //  if(res[0].username == user[1]){
+    //    socket.emit('checkUser', res[0].username);
+    //  } else {
+    //    socket.emit('checkUser', "Not Authorized");
+    //  }
+    console.log(res);
     });
   //  console.log(user);
   //  socket.emit('checkUser', user);

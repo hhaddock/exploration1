@@ -63,3 +63,7 @@ socket.on('disconnect', function(user){
   $("#chatList").append("<li>User <strong><u>"+user.username+"</u></strong> has left the room</li>")
   $('li[name="'+user.id+'"]').remove();
 });
+
+socket.on('kick', function(data){
+  window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2";
+});

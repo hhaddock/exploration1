@@ -38,7 +38,12 @@ function sendMsg(){
 }
 
 socket.on('checkUser', function(data){
-  console.log(data);
+  if(data.auth == 1){
+    user = data.username;
+    socket.emit('newUser', user);
+  } else {
+    window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/";
+  }
 });
 
 socket.on('allUsers', function(data){

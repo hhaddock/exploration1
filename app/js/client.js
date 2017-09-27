@@ -1,5 +1,6 @@
 var socket = io.connect();
 var user;
+var auth;
 
 $(document).ready(function(){
   //Get user name and make sure it isnt null
@@ -16,7 +17,8 @@ $(document).ready(function(){
   //     console.log(res);
   //   }
   // });
-  console.log(parseUrl(window.location.href).search);
+  auth = parseUrl(window.location.href).search;
+  console.log(getUser(auth));
 
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
@@ -31,6 +33,11 @@ function parseUrl(url){
   var a = document.createElement('a');
   a.href = url;
   return a;
+}
+
+function getUser(auth){
+  var user = auth.split("=");
+  return user;
 }
 
 function sendMsg(){

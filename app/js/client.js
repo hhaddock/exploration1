@@ -4,6 +4,7 @@ var auth;
 
 url = parseUrl(window.location.href).search;
 auth = getAuth(url);
+console.log(auth);
 
 $(document).ready(function(){
   //Get user name and make sure it isnt null
@@ -25,7 +26,8 @@ function parseUrl(url){
 }
 
 function getAuth(url){
-  console.log(url);
+  var user = url.split("=");
+  return user[1];
 }
 
 function sendMsg(){

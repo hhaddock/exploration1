@@ -57,11 +57,11 @@ socket.on('newUser', function(data){
 
 socket.on('sendMessage', function(user, msg){
   $("#chatList").append("<li><span><strong><u>"+user+"</u></strong><span>: <span>"+msg+"</span></li><hr>")
-  window.setInterval(function() {
+  var clock = setInterval(function() {
     var elem = document.getElementById('chatList');
     elem.scrollTop = elem.scrollHeight;
   }, 1000);
-  window.clearInterval();
+  clearInterval(clock);
 });
 
 socket.on('disconnect', function(user){

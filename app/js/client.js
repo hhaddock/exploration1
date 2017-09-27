@@ -10,7 +10,7 @@ $(document).ready(function(){
   //   socket.emit('newUser', user);
   // }
   $.ajax({
-    url: "https://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/php/auth.php",
+    url: "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/php/auth.php",
     type: "get",
     success: function(res){
       console.log(res);

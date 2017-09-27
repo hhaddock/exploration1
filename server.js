@@ -10,7 +10,7 @@ app.get('/', function(req, res){
  res.sendFile(path.join(__dirname + '/app/index.html'));
 });
 
-server.listen(4321, function(){
+server.listen(1234, function(){
  console.log("Listening on port 8888");
 });
 

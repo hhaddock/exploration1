@@ -24,7 +24,7 @@ io.on('connection', function(socket){
 
   socket.on('checkUser', function(user){
    db.query('SELECT * FROM users', function(err, res, fields){
-     console.log(res[0].username);
+     console.log(user);
    });
   //  console.log(user);
   //  socket.emit('checkUser', user);

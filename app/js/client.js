@@ -3,13 +3,19 @@ var user;
 
 $(document).ready(function(){
   //Get user name and make sure it isnt null
-  user = prompt("Please enter your user name", "User");
-  if(user == null){
-    location.reload();
-  } else {
-    socket.emit('newUser', user);
-  }
-
+  // user = prompt("Please enter your user name", "User");
+  // if(user == null){
+  //   location.reload();
+  // } else {
+  //   socket.emit('newUser', user);
+  // }
+  $.ajax({
+    url: "https://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/php/auth.php",
+    type: "get",
+    success: function(res){
+      console.log(res);
+    }
+  });
   //ease of use tool for submitting msg on enter key
   $("#chatText").keypress(function(e){
     //keycode for enter key

@@ -23,6 +23,13 @@ server.lastUserID = 0; //used to keep track of users
 io.on('connection', function(socket){
   console.log("a user has connected!");
 
+  socket.on('checkUser', function(user){
+   db.query('SELECT * FROM users', function(err, rows){
+     res.json(rows);
+     socket.emit('checkUser', rows);
+   });
+  });
+
   socket.on('newUser', function(user){
     socket.user = {
       id: server.lastUserID++,

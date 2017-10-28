@@ -73,6 +73,7 @@ socket.on('sendMessage', function(user, msg){
 });
 
 socket.on('getChatLogs', function(res){
+  $('.tbody').html('');
   for(i = 0; i < res.length; i++){
     var ts = res[i].timestamp;
     var stamp = ts.split("T")

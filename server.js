@@ -65,7 +65,6 @@ io.on('connection', function(socket){
     db.query(sql, function(err, res, fields){
       socket.emit('getChatLogs', res);
     });
-    // io.emit('sendMessage', user, msg);
   });
 
   socket.on('test', function(user){

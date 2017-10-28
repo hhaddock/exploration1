@@ -50,7 +50,7 @@ io.on('connection', function(socket){
 
   socket.on('sendMessage', function(user, msg){
     var sql = 'INSERT INTO chatLogs SET ?';
-    var values = {user: user, message: msg, timestamp: 'NOW()'};
+    var values = {user: user, message: msg, timestamp: NOW()};
 
     db.query(sql, values, function(err, res, fields){
       if (err) return console.log(err);

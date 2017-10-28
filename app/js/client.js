@@ -76,7 +76,7 @@ socket.on('getChatLogs', function(res){
   for(i = 0; i < res.length; i++){
     console.log(res[i]);
     $('.modal-body').html(
-      '<table>
+      <table style="width:100%">
         <tr>
           <th>Firstname</th>
           <th>Lastname</th>
@@ -92,7 +92,7 @@ socket.on('getChatLogs', function(res){
           <td>Jackson</td>
           <td>94</td>
         </tr>
-      </table>'
+      </table>
     );
   }
 });

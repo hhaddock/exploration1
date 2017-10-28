@@ -74,6 +74,8 @@ socket.on('sendMessage', function(user, msg){
 
 socket.on('getChatLogs', function(res){
   for(i = 0; i < res.length; i++){
+    var ts = res[i].timestamp;
+    var stamp = ts.split("T")
     console.log(res[i]);
     $('.tbody').append(
       "<tr><td>"+res[i].user+"</td><td>"+res[i].message+"</td><td>"+res[i].timestamp+"</td></tr><br>"

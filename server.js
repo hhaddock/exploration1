@@ -49,7 +49,7 @@ io.on('connection', function(socket){
   });
 
   socket.on('sendMessage', function(user, msg){
-    console.log(user.username + msg);
+    console.log(user)
     // var sql = 'INSERT INTO chatLogs (user, message) VALUES ?';
     // var values = [
     //   [user, msg]

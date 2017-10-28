@@ -34,6 +34,10 @@ function sendMsg(){
   $("#chatText").val("");
 }
 
+function viewLogs(){
+  
+}
+
 function logout(){
   window.location.href = "http://ec2-34-209-75-64.us-west-2.compute.amazonaws.com/exploration2/";
 }

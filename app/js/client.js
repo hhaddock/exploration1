@@ -75,25 +75,7 @@ socket.on('sendMessage', function(user, msg){
 socket.on('getChatLogs', function(res){
   for(i = 0; i < res.length; i++){
     console.log(res[i]);
-    $('.modal-body').html(
-      <table style="width:100%">
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Age</th>
-        </tr>
-        <tr>
-          <td>Jill</td>
-          <td>Smith</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>Eve</td>
-          <td>Jackson</td>
-          <td>94</td>
-        </tr>
-      </table>
-    );
+    $('.modal-body').html();
   }
 });
 

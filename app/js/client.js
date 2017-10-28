@@ -76,7 +76,7 @@ socket.on('getChatLogs', function(res){
   for(i = 0; i < res.length; i++){
     console.log(res[i]);
     $('.modal-body').html(
-      '<table style="width:100%">
+      '<table>
         <tr>
           <th>Firstname</th>
           <th>Lastname</th>

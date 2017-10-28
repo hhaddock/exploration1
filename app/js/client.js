@@ -78,7 +78,7 @@ socket.on('getChatLogs', function(res){
     var stamp = ts.split("T")
     console.log(res[i]);
     $('.tbody').append(
-      "<tr><td>"+res[i].user+"</td><td>"+res[i].message+"</td><td>"+res[i].timestamp+"</td></tr><br>"
+      "<tr><td>"+res[i].user+"</td><td>"+res[i].message+"</td><td>"+stamp[0] + " "+stamp[1]+"</td></tr><br>"
     );
   }
 });

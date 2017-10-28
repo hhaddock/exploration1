@@ -63,7 +63,6 @@ io.on('connection', function(socket){
     var sql = 'SELECT * FROM chatLogs';
     var values = {user: user, message: msg};
     db.query(sql, function(err, res, fields){
-      console.log(res);
       socket.emit('getChatLogs', res);
     });
     // io.emit('sendMessage', user, msg);

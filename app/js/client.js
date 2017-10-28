@@ -73,7 +73,9 @@ socket.on('sendMessage', function(user, msg){
 });
 
 socket.on('getChatLogs', function(res){
-  console.log(res);
+  res.each(function(){
+    console.log(this.message);
+  });
 });
 
 socket.on('disconnect', function(user){

@@ -59,6 +59,16 @@ io.on('connection', function(socket){
     io.emit('sendMessage', user, msg);
   });
 
+  socket.on('getChatLogs', function(user, msg){
+    var sql = 'SELECT * FROM chatLogs';
+    var values = {user: user, message: msg};
+
+    db.query(sql, function(err, res, fields){
+      console.log(res);
+    });
+    // io.emit('sendMessage', user, msg);
+  });
+
   socket.on('test', function(user){
     console.log("test");
   });

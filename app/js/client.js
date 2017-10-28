@@ -35,7 +35,7 @@ function sendMsg(){
 }
 
 function viewLogs(){
-  
+  socket.emit('getChatLogs');
 }
 
 function logout(){

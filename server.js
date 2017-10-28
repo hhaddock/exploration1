@@ -49,9 +49,10 @@ io.on('connection', function(socket){
   });
 
   socket.on('sendMessage', function(user, msg){
-    var sql = 'INSERT INTO chatLogs (user, message) VALUES ?';
-    var values = [user, msg]
-    db.query(sql, [values] , function(err, res, fields){
+    var sql = 'INSERT INTO chatLogs SET ?';
+    var values = {username: user, message: msg};
+
+    db.query(sql, values, function(err, res, fields){
       if (err) return console.log(err);
       console.log(res);
     });

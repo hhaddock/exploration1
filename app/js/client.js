@@ -75,7 +75,8 @@ socket.on('sendMessage', function(user, msg){
 socket.on('getChatLogs', function(res){
   for(i = 0; i < res.length; i++){
     console.log(res[i]);
-    $('.modal-body').html(res[i] + "<br>")
+    $('.modal-body').html(res[i].user + "<br>");
+    $('.modal-body').html(res[i].message + "<br>")
   }
 });
 

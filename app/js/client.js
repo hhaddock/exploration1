@@ -72,6 +72,10 @@ socket.on('sendMessage', function(user, msg){
   }, 1000);
 });
 
+socket.on('getChatLogs', function(res){
+  console.log(res);
+});
+
 socket.on('disconnect', function(user){
   $("#chatList").append("<li>User <strong><u>"+user.username+"</u></strong> has left the room</li><hr>")
   $('li[name="'+user.id+'"]').remove();
